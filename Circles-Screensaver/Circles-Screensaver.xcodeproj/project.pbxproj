@@ -6,7 +6,16 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		F9EB05CD23297D2C00F8E2B2 /* CirclesScreenSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EB05CC23297D2C00F8E2B2 /* CirclesScreenSaver.swift */; };
+		F9EB05CF23297D7200F8E2B2 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EB05CE23297D7200F8E2B2 /* Circle.swift */; };
+		F9EB05D123297D8400F8E2B2 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EB05D023297D8400F8E2B2 /* Color.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		F9EB05CC23297D2C00F8E2B2 /* CirclesScreenSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclesScreenSaver.swift; sourceTree = "<group>"; };
+		F9EB05CE23297D7200F8E2B2 /* Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
+		F9EB05D023297D8400F8E2B2 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		F9EE3AB023297BA900FEB1F0 /* Circles-Screensaver.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Circles-Screensaver.saver"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9EE3AB723297BA900FEB1F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -42,6 +51,9 @@
 			isa = PBXGroup;
 			children = (
 				F9EE3AB723297BA900FEB1F0 /* Info.plist */,
+				F9EB05CC23297D2C00F8E2B2 /* CirclesScreenSaver.swift */,
+				F9EB05CE23297D7200F8E2B2 /* Circle.swift */,
+				F9EB05D023297D8400F8E2B2 /* Color.swift */,
 			);
 			path = "Circles-Screensaver";
 			sourceTree = "<group>";
@@ -88,6 +100,7 @@
 				TargetAttributes = {
 					F9EE3AAF23297BA900FEB1F0 = {
 						CreatedOnToolsVersion = 10.3;
+						LastSwiftMigration = 1030;
 					};
 				};
 			};
@@ -123,6 +136,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9EB05CD23297D2C00F8E2B2 /* CirclesScreenSaver.swift in Sources */,
+				F9EB05CF23297D7200F8E2B2 /* Circle.swift in Sources */,
+				F9EB05D123297D8400F8E2B2 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,13 +259,21 @@
 		F9EE3ABB23297BA900FEB1F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = ZF8ULWKCSS;
 				INFOPLIST_FILE = "Circles-Screensaver/Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mark-vandenberg.Circles-Screensaver";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = saver;
 			};
 			name = Debug;
@@ -257,13 +281,20 @@
 		F9EE3ABC23297BA900FEB1F0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = ZF8ULWKCSS;
 				INFOPLIST_FILE = "Circles-Screensaver/Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mark-vandenberg.Circles-Screensaver";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = saver;
 			};
 			name = Release;
