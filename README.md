@@ -2,7 +2,7 @@
 Screensaver for MacOS that displays circles on a black background
 
 # Installation
-Get the latest version[here](https://github.com/mark-vandenberg/Circles-Screensaver/releases "Circles-Screensaver/releases"). 
+Get the latest version [here](https://github.com/mark-vandenberg/Circles-Screensaver/releases "Circles-Screensaver/releases"). 
 1. Download the screensaver for the color style you want.
 2. Open your downloads folder.
 3. Double-click the __.saver__ file you just downloaded or use right-click > open
