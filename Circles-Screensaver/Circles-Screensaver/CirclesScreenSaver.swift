@@ -13,11 +13,11 @@ class CirclesScreenSaver: ScreenSaverView {
     
     //MARK: - Properties
     
-    fileprivate var width = 0.0
-    fileprivate var height = 0.0
-    fileprivate var maxRadius : Double = 0.0
-    fileprivate var yZero = 0.0
-    fileprivate var xZero = 0.0
+    fileprivate var width : CGFloat = 0
+    fileprivate var height : CGFloat = 0
+    fileprivate var maxRadius : CGFloat = 0
+    fileprivate var yZero : CGFloat = 0
+    fileprivate var xZero : CGFloat = 0
     fileprivate var circles = [Circle]()
     fileprivate var maxCircles = 0
     fileprivate var timeBetween = 0
@@ -77,8 +77,8 @@ class CirclesScreenSaver: ScreenSaverView {
     fileprivate func setup() {
         animationTimeInterval = 1.0 / 50.0
         
-        width = Double(self.bounds.width)
-        height = Double(self.bounds.height)
+        width = self.bounds.width
+        height = self.bounds.height
         maxRadius = ((width/2)*(width/2)+(height/2)*(height/2)).squareRoot()
         yZero = height / 2.0
         xZero = width / 2.0

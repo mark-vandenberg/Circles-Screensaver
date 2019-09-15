@@ -12,23 +12,23 @@ class Circle: NSObject {
     
     //MARK: - Properties
     
-    fileprivate let maxRadius : Double
-    fileprivate let yZero : Double
-    fileprivate let xZero : Double
-    fileprivate var radius = 0.0
-    fileprivate var diameter = 0.0
-    fileprivate var strokeWidth = CGFloat(0.0)
+    fileprivate let maxRadius : CGFloat
+    fileprivate let yZero : CGFloat
+    fileprivate let xZero : CGFloat
+    fileprivate var radius : CGFloat = 0
+    fileprivate var diameter : CGFloat = 0
+    fileprivate var strokeWidth : CGFloat = 0
     fileprivate var color : NSColor
     fileprivate let colorPallet = Color.Pallet.bright
-    fileprivate var gapBefore = 0.0
-    fileprivate var dash = 1.0
-    fileprivate var gapAfter = 359.0
+    fileprivate var gapBefore : CGFloat = 0
+    fileprivate var dash : CGFloat = 1
+    fileprivate var gapAfter : CGFloat = 359
     fileprivate var round = false
-    fileprivate var rotation = CGFloat(0.0)
+    fileprivate var rotation : CGFloat = 0
     
     //MARK: - Init
     
-    init (maxRadius: Double, xZero: Double, yZero: Double, number: CGFloat) {
+    init (maxRadius: CGFloat, xZero: CGFloat, yZero: CGFloat, number: CGFloat) {
         self.maxRadius = maxRadius
         self.xZero = xZero
         self.yZero = yZero
@@ -40,9 +40,9 @@ class Circle: NSObject {
     //MARK: - Fileprivate Methods
     
     fileprivate func reset() {
-        radius = Double.random(in: 4..<maxRadius)
-        diameter = 2 * radius
         strokeWidth = CGFloat.random(in: 8...64)
+        radius = CGFloat.random(in: 0 + strokeWidth / 2 ..< maxRadius - strokeWidth / 2)
+        diameter = 2 * radius
         color = colorPallet.getNextColor(lastColor: color)
         gapBefore = 0.0
         dash = 1.0
@@ -51,8 +51,8 @@ class Circle: NSObject {
         rotation = CGFloat.random(in: 0...360)
     }
     
-    fileprivate func calculateDash(degree: Double, r: Double) -> Double {
-        return 2 * Double.pi * r / 360 * degree
+    fileprivate func calculateDash(degree: CGFloat, r: CGFloat) -> CGFloat {
+        return 2 * CGFloat.pi * r / 360 * degree
     }
     
     //MARK: - Public Methods
@@ -79,9 +79,9 @@ class Circle: NSObject {
         color.setStroke()
         path.setLineDash(
             [0.0,
-             CGFloat(calculateDash(degree: gapBefore, r: radius)),
-             CGFloat(calculateDash(degree: dash, r: radius)),
-             CGFloat(calculateDash(degree: gapAfter, r: radius))],
+             calculateDash(degree: gapBefore, r: radius),
+             calculateDash(degree: dash, r: radius),
+             calculateDash(degree: gapAfter, r: radius)],
             count: 4, phase: 0.0)
         path.lineWidth = strokeWidth
         
